@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Gallery - Photography Website{% endblock %}
+
+{% block content %}
+    <h1>Photo Gallery</h1>
+    <div class="row">
+        {% for photo in photos %}
+        <div class="col-md-4 mb-4 gallery-item">
+            <div class="card">
+                <div class="img-container">
+                    <a href="#fullsize-{{ loop.index }}">
+                        <img src="{{ url_for('static', filename=photo['url']) }}" class="card-img-top" alt="{{ photo['title'] }}">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ photo['title'] }}</h5>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Full-size image container -->
+    {% for photo in photos %}
+    <div id="fullsize-{{ loop.index }}" class="fullsize-image">
+        <span class="close" onclick="window.location='#'">&times;</span>
+        <img class="fullsize-img" src="{{ url_for('static', filename=photo['url']) }}" alt="{{ photo['title'] }}">
+    </div>
+    {% endfor %}
+{% endblock %}

@@ -11,6 +11,7 @@
         html, body {
             height: 100%;
             margin: 0;
+            font-family: 'Arial', sans-serif;
         }
         body {
             display: flex;
@@ -19,14 +20,45 @@
         .content {
             flex: 1;
         }
-        .sticky-top {
-            top: 0;
-            z-index: 1030;
+        .navbar {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .navbar-brand, .nav-link {
+            color: #333 !important;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 30 30'><path stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+        }
+        .footer {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        .footer .list-inline-item {
+            margin: 0 0.5rem;
+        }
+        .footer .btn-outline-dark {
+            border-color: #333;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .footer .btn-outline-dark:hover {
+            background-color: #333;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="/">Abhi's Gallery</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -56,28 +88,37 @@
         {% block content %}{% endblock %}
     </div>
 
-    <footer class="bg-light text-center text-lg-start py-3 mt-auto">
+    <footer class="footer text-center text-lg-start py-4 mt-auto">
         <div class="container">
-            <p class="mb-10">&copy; 2024 Abhi's Gallery. All rights reserved.</p>
-            <ul class="list-inline">
-                
-                <li class="list-inline-item">
-                    <a href="https://twitter.com/avjt8" target="_blank" class="btn btn-outline-info btn-sm">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://instagram.com/_.avjt._" target="_blank" class="btn btn-outline-danger btn-sm">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://github.com/Avjt2214" target="_blank" class="btn btn-outline-dark btn-sm">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-            </ul>
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2024 Abhi's Gallery. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/avjt8" target="_blank" class="btn btn-outline-dark btn-sm">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://instagram.com/_.avjt._" target="_blank" class="btn btn-outline-dark btn-sm">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/Avjt2214" target="_blank" class="btn btn-outline-dark btn-sm">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

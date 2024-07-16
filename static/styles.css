@@ -17,11 +17,11 @@ footer {
 
 /* About Us section */
 .about-container {
-    max-width: 800px;
     margin-top: 40px;
+    margin-bottom: 40px;
     padding: 20px;
     background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
 }
 
@@ -34,6 +34,21 @@ footer {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
+}
+
+.contact-container {
+    max-width: 500px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+.contact-container h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .contact-form .form-control {
